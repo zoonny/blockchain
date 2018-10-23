@@ -77,3 +77,15 @@
 - git remote add README.md https://github.com/zoonny/blockchain.git
 - git push -u README.md master
 
+- git remote -v
+- git remote add [repository_name] [url].git
+- git remote remove [repository_name]
+- git remote set-url [repository_name] [url].git
+
+- git status
+
+- git add .
+- git commit -m 'commit'
+
+- git push [repository_name] master
+- git pull [repository_name] master
