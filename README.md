@@ -97,6 +97,9 @@
     - miner.stop()
     - connect
         - geth attach http://127.0.0.1:8123
+- ethereum gui wallet
+    - mist
+    - https://github.com/ethereum/mist/releases
 
 # go
 - install
@@ -150,3 +153,10 @@
 - git push origin master
 - git pull origin master
 
+# virtualbox
+- port forward
+    - ubuntu ifconfig : 10.0.2.15
+    - windows ipconfig : 192.168.56.1 or 192.168.99.1
+    - host ip : windows ip
+    - guest ip : ubuntu ip
+    - port : 4200
