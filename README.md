@@ -65,6 +65,66 @@
 - sudo ./b2 install
 - dpkg -s libboost-dev | grep 'Version' 
 
+# go ethereum
+- src
+    - https://ethereum.github.io/go-ethereum/install/#build-it-from-source-code
+    - 
+- package
+    - https://ethereum.github.io/go-ethereum/downloads
+    - sudo add-apt-repository -y ppa:ethereum/ethereum
+    - sudo apt-get update
+    - sudo apt-get install ethereum
+    - sudo apt-get update
+    - sudo apt-get install ethereum-unstable
+    - sudo geth
+- new account
+    - geth --datadir "/home/ktds/bc/git/blockchain/geth/data" account new
+         - Address: {65eb093ae771c2b1c98294934e5366f9f75e8576} 
+- list account
+    - geth --datadir "/home/ktds/bc/git/blockchain/geth/data" account list
+- custom ethereum network
+    - write CustomGenesis.json
+    - create block
+        - geth --datadir "/home/ktds/bc/git/blockchain/geth/data" init "/home/ktds/bc/git/blockchain/geth/CustomGenesis.json"
+    - execute ethereum network
+        - geth --identity "privateNetwork" --datadir "/home/ktds/bc/git/blockchain/geth/data" --port "30303" --rpc --rpcaddr 0.0.0.0 --rpcport "8123" --rpccorsdomain "*" --nodiscover --networkid 1900 --nat "any" --rpcapi "db, eth, net, web3, miner" console
+    - eth.accounts
+    - eth.getBalance(eth.accounts[0])
+    - eth.getBalance(eth.coinbase)
+    - eth.getBalance()   //wei unit print
+    - web3.fromwei(eth.getBalance(eth.coinbase), "ether")    // wei => ether unit print
+    - miner.start()
+    - miner.stop()
+    - connect
+        - geth attach http://127.0.0.1:8123
+
+# go
+- install
+    - https://golang.org/dl/
+    - wget https://dl.google.com/go/go1.11.1.linux-amd64.tar.gz
+    - ll go*.gz
+    - sudo tar -C /usr/local -xzf go1.11.1.linux-amd64.tar.gz
+    - ll /usr/local | grep go
+    - sudo ln -s /usr/local/go/bin/go /usr/local/bin/go
+    - sudo ln -s /usr/local/go/bin/godoc /usr/local/bin/godoc
+    - sudo ln -s /usr/local/go/bin/gofmt /usr/local/bin/gofmt
+    - which go
+    - go version
+
+- test
+    - go run test.go
+    - go build test.go
+    - go env
+    - set GOPATH=/home/ktds/bc/git/blockchain/go
+    - GOROOT : install directory
+        - GOROOT/bin : go exe file
+        - GOROOT/pkg : standard package
+        - GOPATH/pkg : 3rd party package
+    - GOPATH : application directory
+    - editor : Atom
+    - web base go edit and test
+        - http://play.golang.org
+
 # git
 - git init
 - git clone
@@ -89,3 +149,4 @@
 
 - git push origin master
 - git pull origin master
+
