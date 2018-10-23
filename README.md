@@ -74,8 +74,8 @@
 - echo "# blockchain" >> README.md
 - git add README.md
 - git commit -m 'first commit'
-- git remote add README.md https://github.com/zoonny/blockchain.git
-- git push -u README.md master
+- git remote add origin https://github.com/zoonny/blockchain.git
+- git push -u origin master
 
 - git remote -v
 - git remote add [repository_name] [url].git
@@ -87,5 +87,5 @@
 - git add .
 - git commit -m 'commit'
 
-- git push [repository_name] master
-- git pull [repository_name] master
+- git push origin master
+- git pull origin master
