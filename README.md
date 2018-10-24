@@ -160,3 +160,30 @@
     - host ip : windows ip
     - guest ip : ubuntu ip
     - port : 4200
+
+# google cloud platform
+- google cloud sdk
+    - https://cloud.google.com/sdk/docs/downloads-apt-get
+    - .bash_profile 
+        - export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
+    - add package source
+        - echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+    - google cloud public key
+        - curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+    - install
+        - sudo apt-get update && sudo apt-get install google-cloud-sdk
+    - install additional
+        - sudo apt-get install google-cloud-sdk-app-engine-java
+    - init
+        - gcloud init
+- ssh
+    - generate key pair
+        - ssh-keygen -t rsa -C "juhyung.yoon@gmail.com"
+        - input direcotry
+        - no password
+        - id_rsa, id_rsa.pub
+    - google cloud console
+        - Compute Engine > Metadata > SSH Keys
+        - copy id_rsa.pub
+    - connect ssh
+        - ssh -i .ssh/id_rsa juhyung.yoon@35.200.21.229

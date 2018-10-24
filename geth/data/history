@@ -1,0 +1,15 @@
+eth.accounts
+etch.getBalance(eth.accounts[0])
+eth.getBalance(eth.accounts[0])
+eth.getBalance(eth.coinbase)
+eth.getBalance()
+web3.fromwei(eth.getBalance(eth.coinbase), "ether")
+miner.start()
+miner.stop()
+eth.accounts
+eth.getBalance(eth.coinbase)
+miner.stop()
+minor.stop()
+eth.accounts
+eth.getBalance(eth.accounts[0])
+eth.getBalance()
