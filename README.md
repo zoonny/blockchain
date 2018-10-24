@@ -187,3 +187,55 @@
         - copy id_rsa.pub
     - connect ssh
         - ssh -i .ssh/id_rsa juhyung.yoon@35.200.21.229
+# curl
+- basic 
+    - reference
+        - http://www.neuromancer.kr/t/curl/120
+    - get page
+        - curl http://www.kernel.org
+        - curl https://github.com/zoonny/blockchain
+        - curl https://github.com/zoonny/blockchain/blob/master/README.md
+    - save file
+        - curl -o readmefile https://github.com/zoonny/blockchain/blob/master/README.md
+        - curl -O https://github.com/zoonny/blockchain/blob/master/README.md
+    - send post -d
+        - application/x-www-form-urlencoded type
+        - -d KEY=VALUE
+        - curl -d name=hyung -d sex=male http://www.kernel.org
+    - curl -I: get header information
+        - curl -I http://www.google.com
+        - 'curl -I' is check redirect. if 301 redirect, abc.kr => xyz.kr change.
+    - [???] curl -u: move server authentication page
+        - curl -u hyungii:qwer1234 https://www.google.com
+    - [???] curl -u: get file from SMB Server
+        - curl -u "domain/username:passwd" smb://server.example.com/share/file.txt
+-
+    - curl -k: skip certification error
+        - curl -k https://www.example.com
+k   - curl -v: print send and receive information to server
+        - curl -v http://www.kernel.org
+    - curl -T: upload ftp file
+        - curl -T banner.jpg -u username:password ftp://ftp.example.com/img/
+        - curl -T banner.jpg -u ftp://username:password@ftp.example.com/img/
+    - curl FTP_URL: search directory in ftp site
+        - curl ftp://username:password@example.com
+- advanced
+    - reference
+        - https://www.lesstif.com/pages/viewpage.action?pageId=14745703 
+    - description
+        - support protocol
+            - HTTP/HTTPS/FTP/LDAP/SCP(Secure Copy Protocol)/TELNET/SMTP/POP3
+        - support libcurl
+            - C/C++ and PHP, ruby, PERL binding
+        - major options
+            - -k --insecure: connect to https site that no verify
+            - -I --head: show only http header
+            - -D --dump-header: save file to HTTP header
+            - -L --location: if response 301 or 302, go to redirection URL, --max-redirs [number], default 50
+            - -d --data: HTTP post data (form or json)
+            - -v --verbose: print send and receive option
+            - [???] -J --remote-header-name: header save file name, curl 7.20+
+            - -o --output: save file
+            - -O --remote-name: save file to remote-file-name
+            - -s --silent: no print
+
